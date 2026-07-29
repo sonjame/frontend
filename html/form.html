@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./data/favicon.ico" />
     <title>Document</title>
   </head>
   <body>
@@ -32,15 +33,45 @@
             url
             week
 
+        input 요소에 사용할 수 있는 속성
+        value,readonly,disabled,size,maxlength,min,max,multiple
+        pattern(정규식), placeholder,required(무조건 입력값 요구),step,autofocus
+
+        form 요소에 사용할 수 있는 속성
+        action, method, autocomplete, novalidate(required => 작동불가)
     -->
     <!-- http://127.0.0.1:5500/html/table.html?name=%ED%99%8D%EA%B8%B8%EB%8F%99&fruits1=%EC%82%AC%EA%B3%BC&fruits2=%EC%82%AC%EA%B3%BC -->
-    <form action="table.html" method="get">
+    <form
+      action="table.html"
+      method="get"
+      autocomplete="off"
+      novalidate
+      id="form1"
+    >
+      <div>
+        <label for="tel">전화번호</label>
+        <input
+          type="tel"
+          name="tel"
+          id="tel"
+          pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+          placeholder="010-0000-0000 형식"
+          autofocus
+        />
+      </div>
       <div>
         <!-- <label for="">이름</label>
         <input type="text" name="name" id="" /> -->
         <label>
           이름
-          <input type="text" name="addr" id="addr" size="50" />
+          <input
+            type="text"
+            name="name"
+            id="nama"
+            size="50"
+            pattern="[가-힣]{2,}"
+            required
+          />
         </label>
         <label>
           주소
@@ -71,7 +102,7 @@
         <input type="email" name="" id="" />
       </div>
       <div>
-        <input type="file" name="" id=""  multiple/>
+        <input type="file" name="" id="" multiple />
       </div>
       <div>
         <input type="color" name="" id="" />
@@ -81,7 +112,7 @@
       </div>
       <div>
         number
-        <input type="number" name="" id="" min="1" max="3" />
+        <input type="number" name="" id="" min="1" max="30" step="3" />
       </div>
       <div>
         <input type="password" name="" id="" />
@@ -97,11 +128,14 @@
       <div><input type="week" name="" id="" /></div>
       <div>
         <select name="cars" id="cars" size="5" multiple>
-          <option value="">----------</option>
-          <option value="volvo">volvo</option>
-          <option value="saab">Saab</option>
-          <option value="fiat">fiat</option>
-          <option value="audi">audi</option>
+          <optgroup label="Swedish Cars">
+            <option value="volvo">volvo</option>
+            <option value="saab">Saab</option>
+          </optgroup>
+          <optgroup label="German Cars">
+            <option value="fiat">fiat</option>
+            <option value="audi">audi</option>
+          </optgroup>
         </select>
       </div>
       <div>
@@ -111,7 +145,17 @@
         <input type="submit" value="전송" />
         <input type="reset" value="초기화" />
         <input type="button" value="보내기" />
+
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+        <button type="button">button</button>
       </div>
     </form>
+
+    <fieldset form="form1">
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label>
+      <input type="text" name="fname" id="fname" form="form1" />
+    </fieldset>
   </body>
 </html>
