@@ -1,0 +1,50 @@
+p {
+  color: red;
+}
+
+#Lastname {
+  color: red;
+}
+
+div.intro {
+  background-color: antiquewhite;
+}
+
+h1,
+h3,
+th {
+  color: green;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+h1:hover {
+  background-color: blueviolet;
+}
+
+[title~="beautiful"] {
+  text-decoration: underline;
+}
+
+p.myquote {
+  border: 2px solid black;
+}
+
+ul#Listfriends + .myquote {
+  border: 2px dotted black;
+}
+
+/* odd(== 2n+1), even(== 2n) */
+table tr:nth-child(2n) {
+  background-color: bisque;
+}
+
+table tr:first-child {
+  background-color: burlywood;
+}
+table tr > th {
+  color: white;
+}

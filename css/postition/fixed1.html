@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 4000px;
+      }
+      /* grand-parent: w 800, h 500, border 2px dashed 색상임의 */
+      .grand-parent {
+        width: 800px;
+        height: 500px;
+        border: 2px dashed blue;
+      }
+      /* parent: w 500, h 400, border 2px dashed 색상임의 */
+      .parent {
+        width: 500px;
+        height: 400px;
+        border: 2px dashed red;
+      }
+      /* child: w 100, h 100, border 1px solid black */
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border: 1px solid black;
+      }
+
+      .fixed {
+        position: fixed;
+        right: 100px;
+        bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grand-parent">
+      <div class="parent">
+        <div class="child">1</div>
+        <div class="child fixed">2</div>
+        <div class="child">3</div>
+      </div>
+    </div>
+  </body>
+</html>
