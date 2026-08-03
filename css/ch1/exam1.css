@@ -1,5 +1,9 @@
 /* 전체 바깥쪽,안쪽 여백 0, 사이즈 : border 까지 포함 */
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 /* font-family */
 .body {
   font-family: Arial, Helvetica, sans-serif;
