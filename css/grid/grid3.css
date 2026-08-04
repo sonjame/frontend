@@ -36,3 +36,66 @@ main div {
   color: #333;
   font-weight: normal;
 }
+
+/*
+  position : absolute / 부모 header
+  #menu : 화면 오른쪽 / top:0, right:0
+  안쪽여백 : 상하 0, 좌우 lem
+  높이 64px
+  줄높이 64px
+  글자색 #333
+*/
+
+header {
+  position: relative;
+  min-height: 80px;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0, 1em;
+  height: 64px;
+  line-height: 64px;
+  color: #333;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  /* nav 영역은 안보이개 */
+  nav {
+    display: none;
+  }
+
+  /* menu 에 마우스 올리면 숨겼던 nav가 보이도록*/
+  #menu:hover + nav {
+    display: block;
+    text-align: right;
+  }
+
+  #menu:hover + nav li {
+    display: block;
+    margin: 0.6em;
+  }
+}
+
+/* min-width : 769
+  pc 화면 : #menu 숨기기
+  aside, content (200px, 나머지 다 부여)
+  header,footer 전체 다 사용하도록
+*/
+
+@media screen and (min-width: 769px) {
+  #menu {
+    display: none;
+  }
+  #wrapper {
+    grid-template-columns: 200px 1fr;
+  }
+
+  header,
+  footer {
+    grid-column: 1 / -1;
+  }
+}

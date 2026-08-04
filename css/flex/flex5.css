@@ -10,7 +10,6 @@
   margin: 2rem auto;
 
   display: flex;
-  gap: 1em;
 }
 
 .container .sidebar {
@@ -30,4 +29,28 @@
 .container .right {
   order: 3;
   background-color: #34495e;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container main {
+    order: 1;
+  }
+
+  .container .left {
+    order: 2;
+  }
+
+  .container .sidebar {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container .sidebar {
+    width: 100%;
+  }
 }
