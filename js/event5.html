@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Light</h1>
+    <div>
+      <button type="button">Turn on the light</button>
+      <img src="./data/pic_bulboff.gif" alt="" />
+      <button type="button">Turn off the light</button>
+    </div>
+    <script>
+      //   const button1 = document.querySelector("#on");
+      //   button1.addEventListener("click", (e) => {
+      //     img.src = "./data/pic_bulbon.gif";
+      //   });
+      //   const button2 = document.querySelector("#off");
+      //   button2.addEventListener("click", (e) => {
+      //     img.src = "./data/pic_bulboff.gif";
+      //   });
+
+      // 이벤트버블링 => 이벤트위임
+      const div = document.querySelector("div");
+      // img 찾기
+      const img = document.querySelector("img");
+      div.addEventListener("click", (e) => {
+        // console.log(e.target);
+        // console.log(e.currentTarget);
+        if (e.target.textContent === "Turn on the light") {
+          img.src = "./data/pic_bulbon.gif";
+        } else {
+          img.src = "./data/pic_bulboff.gif";
+        }
+      });
+    </script>
+  </body>
+</html>
