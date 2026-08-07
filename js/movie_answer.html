@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 80%;
+        margin: 100px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-top: 30px;
+        display: none;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 0.4em 0.8em;
+      }
+      input[type="date"] {
+        appearance: none;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 8px 12px;
+        color: #333;
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 시멘틱 태그 : 브라우저와 검색엔진에게 이 부분이 어떤 역할인지 알려주는 태그
+      옛날
+      <div id="header">~~~~</div>
+      <div id="menu">~~~~</div>
+      <div id="content">~~~~</div>
+
+      현재
+      <header></header>
+      <nav></nav>
+      <main></main>
+      <footer></footer>
+
+      table태그 안에서 사용함
+      thead, tbodt, tfoot
+
+    -->
+    <div class="container">
+      <h2>일별 박스 오피스</h2>
+      <input type="date" name="date" id="date" />
+      <span>날짜 선택 시 해당 일의 1 ~ 10 위 박스오피스</span>
+      <table>
+        <thead>
+          <tr>
+            <td>순위</td>
+            <td>전일대비</td>
+            <td>영화명</td>
+            <td>개봉일</td>
+            <td>당일관객수</td>
+            <td>누적관객수</td>
+            <td>누적매출액</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="detail"></div>
+    </div>
+
+    <script src="movie_answer.js"></script>
+  </body>
+</html>

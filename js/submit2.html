@@ -34,6 +34,8 @@
 
         const form = e.target;
 
+        const regExp1 = /^\d{3}-\d{4}-\d{4}$/;
+
         if (form.userid.value === "") {
           alert("아이디를 입력");
           form.userid.focus();
@@ -42,8 +44,9 @@
           alert("비밀번호 입력");
           form.password.focus();
           return;
-        } else if (form.tel.value === "") {
-          alert("전화번호 입력");
+        } else if (!regExp1.test(form.tel.value)) {
+          // 전화번호 패턴 010-4513-1234
+          alert("전화번호 확인해주세요");
           form.tel.focus();
           return;
         }

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+      }
+
+      .data {
+        align-items: center;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      .search {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #targetDt {
+        width: 300px;
+        height: 30px;
+        margin-left: 180px;
+      }
+
+      #btn {
+        width: 50px;
+      }
+
+      #movie {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      <h1>영화 순위</h1>
+      <input type="text" id="targetDt" placeholder="예)20260805" />
+      <button id="btn">조회</button>
+    </div>
+    <div id="movie"></div>
+
+    <script src="movie.js"></script>
+  </body>
+</html>
